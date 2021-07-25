@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/index.css" />
+  </head>
+  <body>
+    <form
+      class="
+        mt-8
+        rounded
+        shadow-lg
+        flex flex-col
+        border-2
+        max-w-xl
+        mx-auto
+        items-center
+      "
+    >
+      <h3 class="font-bold text-3xl text-center my-4">Student information</h3>
+
+      <div class="max-w-auto flex flex-col my-2">
+        <label> Your full name </label>
+        <input class="border-2 w-48" type="text" id="fullname" />
+      </div>
+      <div class="max-w-auto flex flex-col my-2">
+        <label> Email</label>
+        <input class="border-2 w-48" type="text" id="email" />
+      </div>
+
+      <div class="max-w-auto flex flex-col my-2">
+        <label> Phone number </label>
+        <input class="border-2 w-48" type="text" id="phone" />
+      </div>
+
+      <div class="max-w-auto flex flex-col my-2">
+        <label> Address </label>
+        <input class="border-2 w-48" type="text" id="address" />
+      </div>
+
+      <div class="max-w-auto flex items-center my-2">
+        <label> Gender </label>
+        <input
+          class="ml-4"
+          name="gender"
+          type="radio"
+          id="male"
+          value="1"
+        />Male
+        <input
+          class="ml-4"
+          name="gender"
+          type="radio"
+          id="female"
+          value="2"
+        />Female
+      </div>
+      <button id="button" class="p-2 bg-black text-white rounded-md">
+        Submit
+      </button>
+    </form>
+
+    <div class="my-12 shadow-lg mx-auto flex flex-col max-w-5xl border-2">
+      <h3 class="text-center text-3xl p-4 font-bold">Students list</h3>
+      <table id="table-student" class="border-2">
+        <tr class="justify-center border-b-2">
+          <td>Name</td>
+          <td>Email</td>
+          <td>Phone</td>
+          <td>Address</td>
+          <td>Gender</td>
+          <td>Action</td>
+        </tr>
+      </table>
+    </div>
+    <script src="/js/index.js"></script>
+  </body>
+</html>
