@@ -60,7 +60,13 @@ function renderStudent(students) {
       <td class="py-4">Action</td>
     </tr>`
 
+    if (students.length <= 0)
+        document.getElementById("table-student").style.display = "none";
+    else
+        document.getElementById("table-student").style.display = "block";
+
     students.forEach((student, index) => {
+        let studentid = index;
         index++;
         let genderOfstudenr = ''
         if (student.gender == 1)
@@ -77,23 +83,25 @@ function renderStudent(students) {
         <td class="py-4">${student.address}</td>
         <td class="py-4">${genderOfstudenr}</td>
         <td>
-        <button id="del-btn" class="font-bold px-1 bg-black text-white">Del</button>
+        <button id="del-btn" onclick="del(${studentid})"  class="font-bold px-1 bg-black text-white">Del</button>
         or 
         <button id="edit-btn" class="font-bold px-1 bg-black text-white">Edit</button>
         </td>
         </tr>
 
         `
-
-
         const tableStudent = document.getElementById('table-student');
         tableStudent.innerHTML = tableContent;
 
     })
 }
 
+function del(id) {
+    const student = JSON.parse(localStorage.getItem("students"));
+    console.log(student);
+    student.splice(id, 1);
+    localStorage.setItem("students", JSON.stringify(student));
+    renderStudent(student);
 
-const delbtn = document.getElementById('del-btn');
-delbtn.addEventListener('click', () => {
-    alert("success");
-})
+
+}
