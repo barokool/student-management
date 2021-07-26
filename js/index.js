@@ -20,8 +20,6 @@ button.addEventListener('click', (e) => {
         return;
     }
 
-
-
     students.push({
         name: fullname,
         email: email,
@@ -51,42 +49,28 @@ function getLocalStorage() {
 getLocalStorage();
 
 function renderStudent(students) {
-    // let tableContent =
-    //     `<tr class="border-b-2 py-4 justify-center">
-    //   <td class="py-4"></td>
-    //   <td class="py-4"></td>
-    //   <td class="py-4"></td>
-    //   <td class="py-4"></td>
-    //   <td class="py-4"></td>
-    //   <td class="py-4"></td>
-    //   <td class="py-4"></td>
-    // </tr>`
-    let tableContent = '';
+    let tableContent =
+        `<tr class="border-b-2 py-4 items-center justify-center">
+        <td class="py-4">Number</td>
+      <td class="py-4">Name</td>
+      <td class="py-4">Email</td>
+      <td class="py-4">Phone</td>
+      <td class="py-4">Address</td>
+      <td class="py-4">Gender</td>
+      <td class="py-4">Action</td>
+    </tr>`
 
-    students.forEach((student) => {
+    students.forEach((student, index) => {
+        index++;
         let genderOfstudenr = ''
         if (student.gender == 1)
             genderOfstudenr = 'Male';
         else if (student.gender == 2) genderOfstudenr = 'Female';
-        // tableContent =
-        // // <tr class="border-b-2 py-4 justify-center">
-        // `
 
-        // <td class="py-4"> ${student.name}</td>
-        // <td class="py-4">${student.email}</td>
-        // <td class="py-4">${student.phone}</td>
-        // <td class="py-4">${student.address}</td>
-        // <td class="py-4">${genderOfstudenr}</td>
-        // <td>
-        // <button id="del-btn" class="font-bold px-1 bg-black text-white">Del</button>
-        // or 
-        // <button id="edit-btn" class="font-bold px-1 bg-black text-white">Edit</button>
-        // </td>
-
-        // `
-        // </tr>
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
+        tableContent +=
+            `
+        <tr class="border-b-2 py-4 items-center justify-center">
+        <td class="py-4">${index}</td>
         <td class="py-4"> ${student.name}</td>
         <td class="py-4">${student.email}</td>
         <td class="py-4">${student.phone}</td>
@@ -97,11 +81,19 @@ function renderStudent(students) {
         or 
         <button id="edit-btn" class="font-bold px-1 bg-black text-white">Edit</button>
         </td>
-        `;
-        studentlist.appendChild(tr);
+        </tr>
+
+        `
 
 
-        // document.getElementById('table-student').innerHTML += tableContent;
+        const tableStudent = document.getElementById('table-student');
+        tableStudent.innerHTML = tableContent;
 
     })
 }
+
+
+const delbtn = document.getElementById('del-btn');
+delbtn.addEventListener('click', () => {
+    alert("success");
+})
