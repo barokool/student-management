@@ -62,8 +62,6 @@ function renderStudent(students) {
 
     if (students.length <= 0)
         document.getElementById("table-student").style.display = "none";
-    else
-        document.getElementById("table-student").style.display = "block";
 
     students.forEach((student, index) => {
         let studentid = index;
