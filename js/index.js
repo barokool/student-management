@@ -27,10 +27,17 @@ button.addEventListener('click', (e) => {
         address: address,
         gender: gender,
     });
+
+
     addTolocalStorage(students);
 
 
 
+
+})
+
+const clearbtn = document.getElementById("clear-btn");
+clearbtn.addEventListener("click", () => {
 
 })
 
@@ -83,7 +90,7 @@ function renderStudent(students) {
         <td>
         <button id="del-btn" onclick="del(${studentid})"  class="font-bold px-1 bg-black text-white">Del</button>
         or 
-        <button id="edit-btn" class="font-bold px-1 bg-black text-white">Edit</button>
+        <button id="edit-btn" onclick="edit(${studentid})" class="font-bold px-1 bg-black text-white">Edit</button>
         </td>
         </tr>
 
@@ -101,5 +108,17 @@ function del(id) {
     localStorage.setItem("students", JSON.stringify(student));
     renderStudent(student);
 
-
 }
+
+function edit(id) {
+    const container = document.getElementById("container");
+    container.classList.add("active");
+}
+
+const closebtn = document.getElementById("close-btn");
+closebtn.addEventListener("click", (e) => {
+    const container = document.getElementById("container");
+    container.classList.remove("active");
+    e.preventDefault();
+
+})

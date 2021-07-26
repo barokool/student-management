@@ -4,3 +4,32 @@
     font-family: 'Poppins', sans-serif;
 }
 
+.popup-container { 
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0,0,0,0.5);
+    display:none;
+    align-items: center;
+    justify-content:center;
+}
+
+.popup-container.active { 
+    display:flex;
+}
+.popup { 
+    background-color: #fff;
+    width:auto;
+    padding:2rem;
+    box-shadow:2px 2px 10px rgba(0,0,0,0.3);
+    position:relative;
+
+}
+.popup button { 
+    font-size: 1.5rem;
+    position:absolute;
+    top: 0rem;
+    right: 0.5rem;
+}
