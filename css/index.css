@@ -33,3 +33,18 @@
     top: 0rem;
     right: 0.5rem;
 }
+
+.form-student { 
+    display:none;
+}
+
+.form-student.active { 
+    display:flex;
+}
+
+.close-btn { 
+    font-size: 1.5rem;
+    position:absolute;
+    top: 0rem;
+    right: 0.5rem;
+}

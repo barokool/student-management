@@ -122,3 +122,18 @@ closebtn.addEventListener("click", (e) => {
     e.preventDefault();
 
 })
+
+const addStudents = document.getElementById("add-students");
+
+addStudents.addEventListener("click", () => {
+    const formStudent = document.getElementById("form-st");
+    formStudent.classList.add("active");
+})
+
+const formclose = document.getElementById("form-close");
+
+formclose.addEventListener("click", (e) => {
+    const formStudent = document.getElementById("form-st");
+    formStudent.classList.remove("active");
+    e.preventDefault();
+})
